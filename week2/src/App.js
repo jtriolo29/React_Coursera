@@ -11,14 +11,22 @@ import TextInputWithFocusButton from './components/TextInputWithFocusButton';
 import Stateless from './components/Stateless';
 import Stateful from './components/Stateful';
 import Restaurant from './components/Restaurant';
+import PropDrilling from './components/PropDrilling';
+import MyContextAPI from './components/MyContextAPI';
+import MyReducer from './components/MyReducer';
+import MyState from './components/MyState'  
 
 
 function App() {
   const seperator = <p>**************************************</p>
   return (
     <div className="App">
-      <Restaurant />
       <Stateless /> {seperator}
+      <MyState /> {seperator}
+      <MyReducer /> {seperator}
+      <MyContextAPI /> {seperator}
+      <PropDrilling /> {seperator}
+      <Restaurant /> {seperator}
       <Stateful /> {seperator}
       <TextInputWithFocusButton /> {seperator}
       <RegisterForm /> {seperator}     
