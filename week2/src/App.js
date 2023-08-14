@@ -15,6 +15,7 @@ import PropDrilling from './components/PropDrilling';
 import MyContextAPI from './components/MyContextAPI';
 import MyReducer from './components/MyReducer';
 import MyState from './components/MyState'  
+import FruitState from './components/FruitState';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className="App">
       <Stateless /> {seperator}
+      <FruitState /> {seperator}
       <MyState /> {seperator}
       <MyReducer /> {seperator}
       <MyContextAPI /> {seperator}
