@@ -13,3 +13,6 @@ Gets rid of babel error
 
 
 git push -u origin main
+
+
+NOTE:  Use Chrome to download peer reviews.
