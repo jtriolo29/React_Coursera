@@ -16,11 +16,12 @@ function ShoppingCart(props) {
   useEffect(() => console.log(total));
   return (
     <>
-      <h1>Total: {total}</h1>
+      <h1>Written to Console - Total: {total}</h1>
       <h2>Impure Function</h2>
       <p>Does not always produce the same output for the same input,</p>
-      <p>or it has side effects and can modify the state outside of its local environment,</p>
+      <p>or it has side effects and can modify the state outside of its local environment,</p>     
       <p>or interacts with the external world, other than returning a value. </p>
+      <p>In this case, we are writing to the console.</p>
       <p><strong>useEffect</strong> is how we deal with side effects.</p>    
     </>
   );

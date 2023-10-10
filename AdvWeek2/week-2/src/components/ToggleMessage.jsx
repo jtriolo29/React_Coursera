@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import "../App";
 
 function ToggleMessage() {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   const clickHandler = () => {
     setToggle(!toggle);
   };
 
   useEffect(() => {
-    document.title = toggle ? "Welcome to Little Lemon" : "Using the usEffect Hook"
-  }, [toggle])
-
+    document.title = toggle
+      ? "Welcome to Little Lemon"
+      : "Using the useEffect Hook";
+  }, [toggle]);
 
   return (
     <div>

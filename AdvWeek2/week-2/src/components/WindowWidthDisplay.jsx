@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
+let listenerCountWith = 0;
+
 function WindowWidthWith() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);  
 
   useEffect(() => {
     const handleResize = () => {
@@ -10,6 +12,8 @@ function WindowWidthWith() {
     };
 
     window.addEventListener("resize", handleResize);
+
+    listenerCountWith++;
 
     // Cleanup function: Removes the event listener when the component unmounts
     return () => {
@@ -20,26 +24,42 @@ function WindowWidthWith() {
   // Empty dependency array ensures this effect runs once when the component
   // mounts and cleans up when it unmounts
 
-  return <div>With useEffect Window width is: {width}</div>;
+  return(
+    <div>
+      <h2>With useEffect Window width is: {width}</h2>
+      <p>Number of handlers created: {listenerCountWith}</p>
+    </div>
+  )  
 }
 
-// UNCOMMENT TO SEE HOW MANY MORE TIMES AN EVENTLISTENER IS CREATED
-/* function WindowWidthWO() {
-  const [width, setWidth] = useState(window.innerWidth);
+// SEE HOW MANY MORE TIMES AN EVENTLISTENER IS CREATED WO useEffect
+// External variable to track the number of event listeners
+let listenerCountWO = 0;
+
+function WindowWidthWO() {
+  const [width, setWidth] = useState(window.innerWidth); 
+
+  listenerCountWO++;
 
   // Without useEffect, this is problematic!
   window.addEventListener("resize", () => {
-    setWidth(window.innerWidth);
+    setWidth(window.innerWidth);    
     console.log("Handler Created without useEffect");
   });
 
-  return <div>Without useEffect Window width is: {width}</div>;
-} */
+  return(
+    <div>
+      <h2>Without useEffect Window width is: {width}</h2>
+      <p>Number of handlers created: {listenerCountWO}</p>
+    </div>
+  )
+}
 
 function WindowWidthDisplay() {
   return (
     <>
-      {/* <WindowWidthWO /> */}
+      <h1>Resize Window Width to See Difference</h1>
+      <WindowWidthWO />
       <WindowWidthWith />
     </>
   );

@@ -28,6 +28,32 @@
   color: #61dafb;
 }
 
+.no-bullets {
+  list-style-type: none;
+}
+
+button {
+  padding: 8px;
+  margin: 4px;
+  width: 180px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: rgb(73, 73, 216);
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input,
+select {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 32px;
+  padding: 0 8px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
