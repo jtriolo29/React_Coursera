@@ -31,7 +31,7 @@ function ChildrenDemo() {
 
   return (
     <div className="App">
-      <h2>Little Lemon Restaurant</h2>
+      <h2>Little Lemon Restaurant 🍕</h2>
       <button onClick={() => setShowAlert(true)}>Show Modal</button>
       {showAlert && (
         <Alert>
