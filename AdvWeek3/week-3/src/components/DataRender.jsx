@@ -10,7 +10,7 @@ const DataFetcher = ({ render, url }) => {
     } else {
       setData(["water", "soda", "juice"]);
     }
-  }, []);
+  }, [url]);
   return render(data);
 };
 

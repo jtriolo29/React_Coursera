@@ -8,19 +8,23 @@ const withMousePosition = (WrappedComponent) => {
       y: 0,
     });
 
+    //  Accessing mouse movements is outside of component - Side Effect
+    //  2 arguments: a function with the code to run and a dependency array
     useEffect(() => {
+      // 1st param - function to run
       const handleMousePositionChange = (e) => {
         setMousePosition({
           x: e.clientX,
           y: e.clientY,
         });
       };
-
       window.addEventListener("mousemove", handleMousePositionChange);
+
+      //  Cleanup function
       return () => {
         window.removeEventListener("mousemove", handleMousePositionChange);
       };
-    }, []);
+    }, []); // 2nd param - dependency array
 
     return <WrappedComponent {...props} mousePosition={mousePosition} />;
   };
