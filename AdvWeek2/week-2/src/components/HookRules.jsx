@@ -36,20 +36,21 @@ function PetNames() {
   );
 }
 
-
 //  The useState is calling the hook with count first and name as second
-//  That order is maintained for the useEffect hooks and the update state calls 
+//  That order is maintained for the useEffect hooks and the update state calls
 function CompOrder() {
   // 1. First hook: useState for count
   const [count, setCount] = useState(0);
 
-  // 2. Second hook: useState for name
-  const [name, setName] = useState("John");
-
   // 3. Third hook: useEffect for document title
+ 
   useEffect(() => {
     document.title = `You clicked ${count} times`;
   }, [count]);
+
+  // 2. Second hook: useState for name
+
+  const [name, setName] = useState("John");
 
   // 4. Fourth hook: useEffect for greeting
   useEffect(() => {
